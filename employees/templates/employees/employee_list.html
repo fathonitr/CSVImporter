@@ -1,0 +1,9 @@
+<h2>Employees</h2>
+<a href="{% url 'employee_create' %}">Add New</a>
+<ul>
+{% for e in employees %}
+  <li>
+    <a href="{% url 'employee_detail' e.pk %}">{{ e.name }}</a> - {{ e.role }} (€{{ e.salary }})
+  </li>
+{% endfor %}
+</ul>
