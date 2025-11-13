@@ -23,3 +23,7 @@ def upload_csv(request):
         form = UploadCSVForm()
     
     return render(request, 'employees/upload.html', {'form': form})
+
+def employees_list(request):
+    employees=Employee.objects.all()
+    return render(request, "employees/employees_list.html", {"employees": employees})
